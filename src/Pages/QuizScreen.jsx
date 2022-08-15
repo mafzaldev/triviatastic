@@ -16,14 +16,11 @@ export default function QuizScreen() {
   } = useContext(QuizContext);
 
   useEffect(() => {
-    if (
-      localStorage.getItem("questions") === [] ||
-      localStorage.getItem("questions") === null
-    ) {
-      console.log(localStorage.getItem("questions"));
+    const questions = JSON.parse(localStorage.getItem("questions"));
+    if (questions === [] || questions === null) {
       navigate("/");
     } else {
-      setQuestions(JSON.parse(localStorage.getItem("questions")));
+      setQuestions(questions);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

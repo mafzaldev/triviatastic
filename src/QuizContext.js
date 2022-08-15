@@ -22,25 +22,26 @@ export const QuizContextProvider = ({ children }) => {
   };
 
   const startQuiz = async (category, difficulty) => {
+    var tempQuestions = [];
     const response = await fetch(
       `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
     );
     const data = await response.json();
-    setQuestions(
-      data.results.map((question) => ({
-        statement: question.question,
-        correctChoice: question.correct_answer,
-        allChoices: shuffleOptions([
-          ...question.incorrect_answers,
-          question.correct_answer,
-        ]),
-        index: data.results.indexOf(question),
-        answerChosen: "",
-      }))
-    );
+    tempQuestions = data.results.map((question) => ({
+      statement: question.question,
+      correctChoice: question.correct_answer,
+      allChoices: shuffleOptions([
+        ...question.incorrect_answers,
+        question.correct_answer,
+      ]),
+      index: data.results.indexOf(question),
+      answerChosen: "",
+    }));
 
-    if (questions.length !== 0) {
-      localStorage.setItem("questions", JSON.stringify(questions));
+    setQuestions(tempQuestions);
+
+    if (tempQuestions.length !== 0) {
+      localStorage.setItem("questions", JSON.stringify(tempQuestions));
     }
     navigate("/quiz");
   };
