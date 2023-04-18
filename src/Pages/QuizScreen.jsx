@@ -39,7 +39,7 @@ export default function QuizScreen() {
 
   return (
     <div className="quiz-container">
-      <h1 style={{ marginTop: "-90px" }}>Quizzical</h1>
+      <h1 style={{ marginTop: "-90px" }}>TriviaTastic</h1>
       {questionStatements}
       {answerError && (
         <span className="error">Please answer all questions</span>

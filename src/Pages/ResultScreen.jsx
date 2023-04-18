@@ -39,7 +39,7 @@ export default function ResultScreen() {
 
   return (
     <div className="quiz-container">
-      <h1 style={{ marginTop: "-90px" }}>Quizzical</h1>
+      <h1 style={{ marginTop: "-90px" }}>TriviaTastic</h1>
       {results}
       <span
         className="finished"

@@ -80,7 +80,7 @@ input[type="radio"] {
   appearance: none;
 }
 
-input[type="radio"]:checked + .choice {
+input[type="radio"]:checked+.choice {
   background-color: #d6dbf5;
   border-color: #d6dbf5;
 }
@@ -305,6 +305,7 @@ footer span a:hover {
   .container {
     top: 80px;
   }
+
   .dropdown {
     width: 100%;
   }

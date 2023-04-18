@@ -11,7 +11,7 @@ export default function StartMenu() {
   }, []);
   return (
     <div className="container">
-      <h1>Quizzical</h1>
+      <h1>TriviaTastic</h1>
       <h3>Test your Skills</h3>
       <select
         value={category}
